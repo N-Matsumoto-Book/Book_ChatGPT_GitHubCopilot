@@ -2,5 +2,5 @@
 .DS_Store
 
 # .gitignoreの変更を無視（ただし.gitignore自体はトラック）
-!.gitignore
+.gitignore
 
