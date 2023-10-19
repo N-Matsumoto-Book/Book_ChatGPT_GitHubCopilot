@@ -1,0 +1,153 @@
+情報処理技術者試験
+No.1 ITパスポート試験
+ITパスポート試験
+略号
+IP
+
+英語名称
+Information Technology Passport Examination
+
+実施時期
+随時
+
+No.2 情報セキュリティマネジメント試験（平成28年度から）
+情報セキュリティマネジメント試験
+略号
+SG
+
+英語名称
+Information Security Management Examination
+
+実施時期
+随時
+
+No.3 基本情報技術者試験
+基本情報技術者試験
+略号
+FE
+
+英語名称
+Fundamental Information Technology Engineer Examination
+
+実施時期
+随時
+
+No.4 応用情報技術者試験
+応用情報技術者試験
+略号
+AP
+
+英語名称
+Applied Information Technology Engineer Examination
+
+実施時期
+春期・秋期
+
+No.5 ITストラテジスト試験
+ITストラテジスト試験
+略号
+ST
+
+英語名称
+Information Technology Strategist Examination
+
+実施時期
+春期
+
+No.6 システムアーキテクト試験
+システムアーキテクト試験
+略号
+SA
+
+英語名称
+Systems Architect Examination
+
+実施時期
+春期
+
+No7.プロジェクトマネージャ試験
+プロジェクトマネージャ試験
+略号
+PM
+
+英語名称
+Project Manager Examination
+
+実施時期
+秋期
+
+No.8 ネットワークスペシャリスト試験
+ネットワークスペシャリスト試験
+略号
+NW
+
+英語名称
+Network Specialist Examination
+
+実施時期
+春期
+
+No.9 データベーススペシャリスト試験
+データベーススペシャリスト試験
+略号
+DB
+
+英語名称
+Database Specialist Examination
+
+実施時期
+秋期
+
+No.10 エンベデッドシステムスペシャリスト試験
+エンベデッドシステムスペシャリスト試験
+略号
+ES
+
+英語名称
+Embedded Systems Specialist Examination
+
+実施時期
+秋期
+
+No.11 ITサービスマネージャ試験
+ITサービスマネージャ試験
+略号
+SM
+
+英語名称
+Information Technology Service Manager Examination
+
+実施時期
+春期
+
+No.12 システム監査技術者試験
+システム監査技術者試験
+略号
+AU
+
+英語名称
+Systems Auditor Examination
+
+実施時期
+秋期
+
+情報処理安全確保支援士試験
+No.1 情報処理安全確保支援士試験（平成29年度から）
+情報処理安全確保支援士試験
+略号
+SC
+
+英語名称
+Registered Information Security Specialist Examination
+
+実施時期
+春期・秋期
+
+（注釈1）
+実施予定時期：春期試験（4月）、秋期試験（10月）
+（注釈2）
+情報処理技術者試験の上記No.4～12の試験区分、情報処理安全確保支援士試験は筆記により実施また、情報処理技術者試験の上記No.1～3についても、身体の不自由等によりCBT方式で受験できない方のために筆記による試験を実施
+（注釈3）
+IPは、平成23年11月からCBT方式で随時実施（平成23年度秋期までは年2回（春期・秋期）実施）
+（注釈4）
+SGは令和2年12月から、FEは令和3年1月からCBT方式で実施（令和元年度秋期までは年2回（春期・秋期）、令和4年度までは年2回（上期・下期）で実施）
