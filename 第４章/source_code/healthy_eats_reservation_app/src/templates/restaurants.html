@@ -1,0 +1,30 @@
+<!-- templates/restaurants.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="飲食店を検索" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        {% for restaurant in restaurants %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ restaurant.image_url }}" alt="{{ restaurant.name }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ restaurant.name }}</h5>
+                    <p class="card-text">{{ restaurant.description }}</p>
+                    <a href="#" class="btn btn-primary">予約する</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
