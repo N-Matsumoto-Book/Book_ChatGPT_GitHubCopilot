@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>方言チェック</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{{ url_for('render_summary_page') }}">まとめ</a>
+                <a href="{{ url_for('render_send_email_page') }}">メール送信</a>
+                <a href="{{ url_for('render_dialect_check_page') }}">方言チェック</a>
+            </nav>
+        </header>
+        <main class="container">
+            <p class="description">文章をテキストエリアに入力してください</p>
+            <form action="{{ url_for('render_dialect_check_page') }}" method="POST">
+                <textarea name="user_query" rows="5" maxlength="50">{% if user_query is defined %}{{ user_query }}{% endif %}</textarea>
+                <input type="submit" value="送信">
+            </form>
+            {% if response_message %}
+            <section class="summary">
+                <h2>メッセージ</h2>
+                <p>{{ response_message }}</p>
+            </section>
+            {% endif %}
+        </main>
+    </body>
+</html>

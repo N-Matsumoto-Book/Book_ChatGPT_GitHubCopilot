@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>まとめをメール送信</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{{ url_for('render_summary_page') }}">まとめ</a>
+                <a href="{{ url_for('render_send_email_page') }}">メール送信</a>
+                <a href="{{ url_for('render_dialect_check_page') }}">方言チェック</a>
+            </nav>
+        </header>
+        <main class="container">
+            <p class="description">送信したい宛先、まとめたい文章をテキストエリアに入力してください</p>
+            <form action="{{ url_for('render_send_email_page') }}" method="POST">
+                <textarea name="input_text" rows="10">{% if input_text is defined %}{{ input_text }}{% endif %}</textarea>
+                <input type="submit" value="まとめて送信">
+            </form>
+            {% if to_address and email_body  %}
+            <section class="summary">
+                <h2>宛先と出力内容</h2>
+                <p>宛先: {{ to_address }}</p>
+                <p>出力内容: {{ email_body }}</p>
+            </section>
+            {% endif %}
+        </main>
+    </body>
+</html>

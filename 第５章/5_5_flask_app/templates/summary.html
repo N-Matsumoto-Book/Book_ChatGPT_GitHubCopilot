@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>文書のまとめ</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{{ url_for('render_summary_page') }}">まとめ</a>
+                <a href="{{ url_for('render_send_email_page') }}">メール送信</a>
+                <a href="{{ url_for('render_dialect_check_page') }}">方言チェック</a>
+            </nav>
+        </header>
+        <main class="container">
+            <p class="description">まとめたいと思う文書をテキストエリアに入力してください</p>
+            <form action="{{ url_for('render_summary_page') }}" method="POST">
+                <textarea name="input_text" rows="10">{% if input_text is defined %}{{ input_text }}{% endif %}</textarea>
+                <input type="submit" value="送信">
+            </form>
+            <!-- 以下を追加 -->
+            {% if summary %}
+            <section class="summary">
+                <h2>まとめ</h2>
+                <!-- 改行で分割されたものをループさせて、表示する -->
+                {% for text in summary %} 
+                    <p>{{ text }}</p>
+                {% endfor %}
+            </section>
+            {% endif %}
+        </main>
+    </body>
+</html>
