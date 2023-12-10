@@ -1,0 +1,18 @@
+from openai import OpenAI
+
+
+client = OpenAI(
+    api_key="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",
+)
+
+response = client.images.generate(
+    model="dall-e-2",
+    prompt="アニメのような白猫の絵",
+    size="256x256",
+    n=3, # 生成する画像の数
+)
+
+print(response.data)
+
+image_url = response.data[0].url
+print(image_url)

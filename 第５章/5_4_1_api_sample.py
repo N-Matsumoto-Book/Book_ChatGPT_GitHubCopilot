@@ -1,7 +1,8 @@
-import openai
-openai.api_key = "your-api-key"
+from openai import OpenAI
 
-completion = openai.ChatCompletion.create(
+client = OpenAI(api_key="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")
+
+completion = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
         {"role": "user", "content": 'ITで注目する技術の話をしてください。'},

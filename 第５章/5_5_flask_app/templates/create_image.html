@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>方言チェック</title>
+        <title>画像の生成</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
@@ -9,19 +9,19 @@
             <nav>
                 <a href="{{ url_for('render_summary_page') }}">まとめ</a>
                 <a href="{{ url_for('render_send_email_page') }}">メール送信</a>
-                <a href="{{ url_for('render_dialect_check_page') }}">方言チェック</a>
+                <a href="{{ url_for('render_create_image_page') }}">画像生成</a>
             </nav>
         </header>
         <main class="container">
-            <p class="description">文章をテキストエリアに入力してください</p>
-            <form action="{{ url_for('render_dialect_check_page') }}" method="POST">
-                <textarea name="user_query" rows="5" maxlength="50">{% if user_query is defined %}{{ user_query }}{% endif %}</textarea>
+            <p class="description">どんな画像を生成したいか入力して下さい</p>
+            <form action="{{ url_for('render_create_image_page') }}" method="POST">
+                <textarea name="input_text" rows="10">{% if input_text is defined %}{{ input_text }}{% endif %}</textarea>
                 <input type="submit" value="送信">
-            </form>
-            {% if response_message %}
+            </form> 
+            {% if image_url %}
             <section class="summary">
-                <h2>メッセージ</h2>
-                <p>{{ response_message }}</p>
+                <h2>生成された画像</h2>
+                <img src="{{ image_url }}" width="100%">
             </section>
             {% endif %}
         </main>

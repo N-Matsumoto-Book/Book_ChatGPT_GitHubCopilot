@@ -1,5 +1,5 @@
 import json
-import openai
+
 
 
 def get_current_weather(location, unit="fahrenheit"):
@@ -13,9 +13,12 @@ def get_current_weather(location, unit="fahrenheit"):
     return weather_info
 
 
-openai.api_key = "your-api-key"
+from openai import OpenAI
+client = OpenAI(
+    api_key="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",
+)
 
-response = openai.ChatCompletion.create(
+response = client.chat.completions.create(
     model="gpt-3.5-turbo-0613",
     messages=[{"role": "user", "content": "東京の現在の天気を押しててください"}],
     functions=[
@@ -56,3 +59,16 @@ response = openai.ChatCompletion.create(
     function_call="auto",
 )
 print(response.choices[0].message.function_call.arguments)  # レスポンスメッセージ
+
+import json
+
+func = response.choices[0] # choicesの0番目の要素を取得する。中には、関数呼び出しのための引数が入っている。
+if func.finish_reason == "function_call": # 条件がfunction_callの場合の処理
+    function_call = func.message.function_call # argumentsとnameが入っている
+    if function_call.name == "get_current_weather": # nameがget_current_weatherの場合
+        arguments = function_call.arguments
+        arguments = json.loads(arguments) # json形式の文字列をpythonで扱いやすいように型変換
+        location = arguments.get("location", "") # locationの値を取得（存在しない場合は空文字）
+        unit = arguments.get("unit", "fahrenheit") # unitの値を取得（存在しない場合は「fahrenheit」）
+        current_weather = get_current_weather(location, unit) # 関数get_current_weatherの呼び出し
+        print(current_weather) # 出力: {'location': '東京, 日本', 'temperature': '72','unit': 'fahrenheit', 'forecast': 'sunny'}
