@@ -5,7 +5,7 @@ import os
 
 DIR_PATH = Path(__file__).resolve().parent
 
-api_key = "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"
+api_key = "your-api-key"
 
 # イメージをbase64エンコードする
 def encode_image(image_path):

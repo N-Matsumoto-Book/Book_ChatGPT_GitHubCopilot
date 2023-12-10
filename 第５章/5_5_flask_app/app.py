@@ -5,7 +5,7 @@ import tiktoken
 app = Flask(__name__)
 
 client = OpenAI(
-    api_key="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",
+    api_key="your-api-key",
 )
 MODEL_NAME = "gpt-3.5-turbo"
 MAX_INPUT_TOKENS = 1000
