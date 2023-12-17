@@ -122,4 +122,4 @@ def render_create_image_page(): # イメージ作成
 
 
 if __name__ == '__main__':
-    app.run(port=5002,debug=True)
+    app.run(debug=True)
