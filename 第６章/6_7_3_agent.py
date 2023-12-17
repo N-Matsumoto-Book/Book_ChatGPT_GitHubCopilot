@@ -1,8 +1,8 @@
-from langchain.agents.agent_toolkits import create_python_agent
-from langchain.tools.python.tool import PythonREPLTool
-from langchain.python import PythonREPL
-from langchain.agents import AgentType
-from langchain.llms import OpenAI
+from langchain.agents.agent_types import AgentType
+from langchain.llms.openai import OpenAI
+from langchain_experimental.agents.agent_toolkits import create_python_agent
+from langchain_experimental.tools import PythonREPLTool
+
 llm = OpenAI(
     openai_api_key="your-api-key")
 

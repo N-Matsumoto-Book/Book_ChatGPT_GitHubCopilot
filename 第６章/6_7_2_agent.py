@@ -1,5 +1,5 @@
 from langchain.memory import ConversationBufferMemory
-from langchain import SerpAPIWrapper
+from langchain.utilities import SerpAPIWrapper
 from langchain.agents import AgentType, initialize_agent, Tool
 from langchain.llms import OpenAI
 from langchain.chains import LLMMathChain

@@ -2,6 +2,9 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage,  SystemMessage
 from langchain.memory import ConversationBufferWindowMemory
 
+chat_model = ChatOpenAI(
+    max_tokens=300, openai_api_key="your-api-key")
+
 # ConversationBufferMemoryインスタンスを初期化
 memory = ConversationBufferWindowMemory(return_messages=True, k=1)
 memory.chat_memory.add_user_message("こんにちは")

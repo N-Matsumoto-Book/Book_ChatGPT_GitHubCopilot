@@ -1,17 +1,13 @@
-from langchain.chains import SimpleSequentialChain
 from langchain.chains.llm import LLMChain
-from langchain.prompts import PromptTemplate
 from langchain.agents import AgentType, initialize_agent, Tool
 import os
-from langchain.document_loaders import DirectoryLoader, UnstructuredMarkdownLoader, PythonLoader, TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter, PythonCodeTextSplitter, Language
 from langchain.vectorstores import Chroma
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 from langchain.memory import ConversationBufferMemory
 
-API_KEY = your-api-key
+API_KEY = "your-api-key"
 # ドキュメントを読み込む
 BASE_DIR = os.path.dirname(__file__)
 docs_db = Chroma(persist_directory=os.path.join(BASE_DIR, "chroma_db"), collection_name="docs",
@@ -54,24 +50,8 @@ agent_executor = initialize_agent(
     memory=memory,
     max_iterations=4
 )
-
-llm_model = OpenAI(max_tokens=1023, openai_api_key=API_KEY, temperature=0.9)
-to_english_prompt = PromptTemplate(
-    template="```{question}```を、英語にしてください\n出力: ",
-    input_variables=["question"],
-)
-
-to_japanese_prompt = PromptTemplate(
-    template="```{english_answer}```を、日本語にしてください\n出力: ",
-    input_variables=["english_answer"],
-)
-to_english_chain = LLMChain(llm=llm_model, prompt=to_english_prompt)
-to_japanese_chain = LLMChain(llm=llm_model, prompt=to_japanese_prompt)
-overall_chain = SimpleSequentialChain(
-    chains=[to_english_chain, agent_executor, to_japanese_chain], verbose=True)
-response = overall_chain.run(
-    "restaurantsテーブルのモデルのソースコードを全て教えて下さい")
+response = agent_executor.run("レストラン詳細画面はどんな画面ですか？")
 print(response)
 
-# response = code_chain.run("レストラン詳細画面のViewのコードを、レストラン一覧画面のソースコードを参考に作成してください")
-# print(response)
+response = agent_executor.run("restaurantsテーブルのモデルのソースコードをすべて教えてください")
+print(response)
