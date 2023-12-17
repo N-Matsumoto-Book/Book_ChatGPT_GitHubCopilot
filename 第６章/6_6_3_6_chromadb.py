@@ -24,13 +24,13 @@ splitted_data = text_splitter.transform_documents(transformed_data)
 BASE_DIR = os.path.dirname(__file__)
 db = Chroma.from_documents(splitted_data, persist_directory=os.path.join(
     BASE_DIR, "chroma_db"),
-    collection_name="wikipedia", embedding=OpenAIEmbeddings(openai_api_key=your-api-key))
+    collection_name="wikipedia", embedding=OpenAIEmbeddings(openai_api_key="your-api-key"))
 
 db.similarity_search("What is Langchain?", k=1)
 
 # ChromaのCollectionを指定して読み込む
 db = Chroma(persist_directory=os.path.join(BASE_DIR, "chroma_db"), collection_name="wikipedia",
-            embedding_function=OpenAIEmbeddings(openai_api_key=your-api-key))
+            embedding_function=OpenAIEmbeddings(openai_api_key="your-api-key"))
 response = db.get(where={"source": "https://en.wikipedia.org/wiki/LangChain"})
 
 print(response)

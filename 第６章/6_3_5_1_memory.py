@@ -3,7 +3,7 @@ from langchain.chat_models import ChatOpenAI
 
 # ChatOpenAIインスタンスを初期化
 chat_model = ChatOpenAI(
-    max_tokens=200, openai_api_key=your-api-key)
+    max_tokens=200, openai_api_key="your-api-key")
 
 # ConversationSummaryBufferMemoryインスタンスを初期化
 memory = ConversationSummaryBufferMemory(llm=chat_model, max_token_limit=60)

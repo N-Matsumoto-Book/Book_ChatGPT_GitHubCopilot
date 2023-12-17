@@ -12,7 +12,7 @@ metadatas = [
 documents = [Document(page_content=text, metadata=metadata)
              for text, metadata in zip(texts, metadatas)]
 db = Chroma(embedding_function=OpenAIEmbeddings(
-    openai_api_key=your-api-key))
+    openai_api_key="your-api-key"))
 db.add_documents(documents)
 
 # 類似度検索

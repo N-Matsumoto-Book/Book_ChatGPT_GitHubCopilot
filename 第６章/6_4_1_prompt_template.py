@@ -10,6 +10,6 @@ print(prompt_template.format(subject="給料", content="増やし方"))
 
 # PromptTemplateインスタンスをの実行
 llm_model = OpenAI(
-    max_tokens=100, openai_api_key=your-api-key)
+    max_tokens=100, openai_api_key="your-api-key")
 print(llm_model.predict(prompt_template.format(subject="給料", content="増やし方")))
 print(prompt_template.input_variables)  # ['content', 'subject']

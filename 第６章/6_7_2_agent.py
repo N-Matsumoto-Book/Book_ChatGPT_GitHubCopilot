@@ -5,9 +5,9 @@ from langchain.llms import OpenAI
 from langchain.chains import LLMMathChain
 
 llm = OpenAI(
-    openai_api_key=your-api-key)
+    openai_api_key="your-api-key")
 
-search = SerpAPIWrapper(serpapi_api_key=your-api-key)
+search = SerpAPIWrapper(serpapi_api_key="your-api-key")
 
 memory = ConversationBufferMemory()
 search_tool = Tool(

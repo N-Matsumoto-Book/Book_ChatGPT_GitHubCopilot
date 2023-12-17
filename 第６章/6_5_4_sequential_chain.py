@@ -6,7 +6,7 @@ from langchain.llms import OpenAI
 
 output_parser = CommaSeparatedListOutputParser()
 llm_model = OpenAI(
-    max_tokens=1023, openai_api_key=your-api-key, temperature=0.9)
+    max_tokens=1023, openai_api_key="your-api-key", temperature=0.9)
 
 prompt_1 = PromptTemplate(
     template="{location}の{topic}について、カンマ区切りで出力して下さい\n{format_instructions}\n一覧: ",

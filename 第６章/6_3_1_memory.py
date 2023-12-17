@@ -41,7 +41,7 @@ print(memory.load_memory_variables({}))  # {'history': []}
 
 # ChatModelの作成
 chat_model = ChatOpenAI(
-    max_tokens=300, openai_api_key=your-api-key)
+    max_tokens=300, openai_api_key="your-api-key")
 memory.chat_memory.add_message(HumanMessage(content="こんにちは"))
 
 # メモリを引数にとってChatModelを実行する

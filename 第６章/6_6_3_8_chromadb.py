@@ -8,7 +8,7 @@ import os
 BASE_DIR = os.path.dirname(__file__)
 
 index_creater = VectorstoreIndexCreator(
-    embedding=OpenAIEmbeddings(openai_api_key=your-api-key),
+    embedding=OpenAIEmbeddings(openai_api_key="your-api-key"),
     text_splitter=CharacterTextSplitter(
         chunk_size=200,
         chunk_overlap=10,

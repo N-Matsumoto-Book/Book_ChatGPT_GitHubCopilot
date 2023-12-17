@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(__file__)
 loader = TextLoader(os.path.join(BASE_DIR, "data", "embedding_list.txt"))
 documents = loader.load()
 embeddings_model = OpenAIEmbeddings(
-    openai_api_key=your-api-key)  # API KEYを設定
+    openai_api_key="your-api-key")  # API KEYを設定
 
 embedding_filter = EmbeddingsRedundantFilter(
     embeddings=embeddings_model,

@@ -1,7 +1,7 @@
 from langchain.llms import OpenAI
 
 # Modelを実行する
-openai_llm = OpenAI(max_tokens=100, openai_api_key=your-api-key)
+openai_llm = OpenAI(max_tokens=100, openai_api_key="your-api-key")
 response = openai_llm.invoke("日本の首都はどこですか？")
 print(response)  # 日本の首都は東京です。
 

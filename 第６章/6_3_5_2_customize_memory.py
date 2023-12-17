@@ -25,7 +25,7 @@ class CustomConversationSummaryBufferMemory(ConversationSummaryBufferMemory):
 
 # ChatOpenAIインスタンスを初期化
 chat_model = ChatOpenAI(
-    max_tokens=200, openai_api_key=your-api-key)
+    max_tokens=200, openai_api_key="your-api-key")
 memory = CustomConversationSummaryBufferMemory(
     llm=chat_model, max_token_limit=60)
 memory.save_context({"input": "今日の天気はどうなるのかな？"}, {

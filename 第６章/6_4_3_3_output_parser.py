@@ -15,7 +15,7 @@ prompt = PromptTemplate(
         "format_instructions": output_parser.get_format_instructions()}
 )
 llm_model = OpenAI(
-    max_tokens=100, openai_api_key=your-api-key)
+    max_tokens=100, openai_api_key="your-api-key")
 output = llm_model(prompt.format(query="ブロックチェーンが発表されたのはいつですか？"))
 print(output)
 
