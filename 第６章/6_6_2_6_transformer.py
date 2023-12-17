@@ -1,18 +1,22 @@
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.document_transformers.embeddings_redundant_filter import EmbeddingsRedundantFilter
-from langchain.document_loaders import TextLoader
-import os
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.document_transformers import Html2TextTransformer
+from langchain.document_loaders import WebBaseLoader
 
-BASE_DIR = os.path.dirname(__file__)
-loader = TextLoader(os.path.join(BASE_DIR, "data", "embedding_list.txt"))
-documents = loader.load()
-embeddings_model = OpenAIEmbeddings(
-    openai_api_key="your-api-key")  # API KEYを設定
+loader = WebBaseLoader("https://ja.wikipedia.org/wiki/")
+data = loader.load()
+print(data)
 
-embedding_filter = EmbeddingsRedundantFilter(
-    embeddings=embeddings_model,
-    similarity_threshold=0.95,
+# HTMLをテキストに変換
+html2text = Html2TextTransformer()
+transformed_data = html2text.transform_documents(data)
+print(transformed_data)
+
+# 文字で分割
+text_splitter = CharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=10,
+    add_start_index=True,
+    separator="\n",
 )
-filtered_documents = embedding_filter.transform_documents(documents)
-
-print([d.page_content for d in filtered_documents])
+splitted_data = text_splitter.transform_documents(transformed_data)
+print(splitted_data)

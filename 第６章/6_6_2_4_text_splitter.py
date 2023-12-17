@@ -3,7 +3,7 @@ from langchain.document_loaders import TextLoader
 import os
 
 BASE_DIR = os.path.dirname(__file__)
-loader = TextLoader(os.path.join(BASE_DIR, "data", "summary.html"))
+loader = TextLoader(os.path.join(BASE_DIR, "data", "summary.html"), autodetect_encoding=True)
 documents = loader.load_and_split()
 
 # HTML向けの設定

@@ -7,7 +7,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 # ドキュメントを読み込む
 BASE_DIR = os.path.dirname(__file__)
 loader = DirectoryLoader(os.path.join(BASE_DIR, "source_code", "docs"), glob="*.md",
-                         recursive=True, loader_cls=UnstructuredMarkdownLoader)
+                         recursive=True, loader_cls=UnstructuredMarkdownLoader, loader_kwargs={"autodetect_encoding": True})
 documents = loader.load()
 # 文字で分割
 text_splitter = RecursiveCharacterTextSplitter(
@@ -45,7 +45,7 @@ Chroma.from_documents(
 # HTMLファイルを読み込む
 BASE_DIR = os.path.dirname(__file__)
 loader = DirectoryLoader(os.path.join(BASE_DIR, "source_code"), glob="*.html",
-                         recursive=True, loader_cls=TextLoader)
+                         recursive=True, loader_cls=TextLoader, loader_kwargs={"autodetect_encoding": True})
 documents = loader.load()
 # 文字で分割
 text_splitter = RecursiveCharacterTextSplitter.from_language(

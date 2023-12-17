@@ -5,7 +5,7 @@ from langchain.text_splitter import TokenTextSplitter
 from langchain.document_loaders import TextLoader
 
 BASE_DIR = os.path.dirname(__file__)
-loader = TextLoader(os.path.join(BASE_DIR, "data", "programming.txt"))
+loader = TextLoader(os.path.join(BASE_DIR, "data", "programming.txt"), autodetect_encoding=True)
 documents = loader.load_and_split()
 text_splitter = TokenTextSplitter(
     chunk_size=200,
