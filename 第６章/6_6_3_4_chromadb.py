@@ -18,10 +18,10 @@ splitted_documents = text_splitter.transform_documents(documents)
 # ChromaにCollectionを指定してで格納する
 db = Chroma.from_documents(
     splitted_documents, persist_directory=os.path.join(
-        BASE_DIR, "chroma_db"), collection_name="my_collection", embedding=OpenAIEmbeddings(openai_api_key="API KEY"))
+        BASE_DIR, "chroma_db"), collection_name="my_collection", embedding=OpenAIEmbeddings(openai_api_key=your-api-key))
 
 db = Chroma(persist_directory=os.path.join(
-    BASE_DIR, "chroma_db"), collection_name="my_collection", embedding_function=OpenAIEmbeddings(openai_api_key="API KEY"))
+    BASE_DIR, "chroma_db"), collection_name="my_collection", embedding_function=OpenAIEmbeddings(openai_api_key=your-api-key))
 query = "オブジェクト思考とは何ですか？"
 docs = db.similarity_search(query)
 

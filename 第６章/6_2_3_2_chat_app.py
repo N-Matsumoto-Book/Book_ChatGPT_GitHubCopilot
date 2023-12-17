@@ -3,8 +3,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
 # ChatOpenAIインスタンスを初期化
-chat_llm = ChatOpenAI(max_tokens=500, openai_api_key="API KEY")
-summarize_llm = ChatOpenAI(max_tokens=200, openai_api_key="API KEY")
+chat_llm = ChatOpenAI(max_tokens=500, openai_api_key=your-api-key)
+summarize_llm = ChatOpenAI(max_tokens=200, openai_api_key=your-api-key)
 
 # 会話の履歴を保存するリスト
 conversation_history = []

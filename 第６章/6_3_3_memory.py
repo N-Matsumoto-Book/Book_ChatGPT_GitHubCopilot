@@ -2,7 +2,7 @@ from langchain.memory import ConversationTokenBufferMemory
 from langchain.chat_models import ChatOpenAI
 
 # ChatOpenAIインスタンスを初期化
-chat_model = ChatOpenAI(max_tokens=300, openai_api_key="API KEY")
+chat_model = ChatOpenAI(max_tokens=300, openai_api_key=your-api-key)
 
 # ConversationBufferMemoryインスタンスを初期化
 memory = ConversationTokenBufferMemory(llm=chat_model, max_token_limit=20)

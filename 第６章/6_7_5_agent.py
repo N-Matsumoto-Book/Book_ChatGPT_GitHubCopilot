@@ -11,7 +11,7 @@ from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 from langchain.memory import ConversationBufferMemory
 
-API_KEY = "API KEY"
+API_KEY = your-api-key
 # ドキュメントを読み込む
 BASE_DIR = os.path.dirname(__file__)
 docs_db = Chroma(persist_directory=os.path.join(BASE_DIR, "chroma_db"), collection_name="docs",

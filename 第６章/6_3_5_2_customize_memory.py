@@ -20,20 +20,12 @@ CUSTOM_SUMMARY_PROMPT = PromptTemplate(
 
 
 class CustomConversationSummaryBufferMemory(ConversationSummaryBufferMemory):
-
-    def predict_new_summary(self, messages, existing_summary):
-        new_lines = get_buffer_string(
-            messages,
-            human_prefix=self.human_prefix,
-            ai_prefix=self.ai_prefix,
-        )
-        chain = LLMChain(llm=self.llm, prompt=CUSTOM_SUMMARY_PROMPT)
-        return chain.predict(summary=existing_summary, new_lines=new_lines)
+    prompt=CUSTOM_SUMMARY_PROMPT
 
 
 # ChatOpenAIインスタンスを初期化
 chat_model = ChatOpenAI(
-    max_tokens=200, openai_api_key="API KEY")
+    max_tokens=200, openai_api_key=your-api-key)
 memory = CustomConversationSummaryBufferMemory(
     llm=chat_model, max_token_limit=60)
 memory.save_context({"input": "今日の天気はどうなるのかな？"}, {

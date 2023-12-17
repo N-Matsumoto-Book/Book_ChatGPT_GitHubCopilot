@@ -1,5 +1,5 @@
 from langchain.llms import OpenAI
-from langchain import PromptTemplate
+from langchain.prompts import PromptTemplate
 from langchain.output_parsers import DatetimeOutputParser
 
 
@@ -15,7 +15,7 @@ prompt = PromptTemplate(
         "format_instructions": output_parser.get_format_instructions()}
 )
 llm_model = OpenAI(
-    max_tokens=100, openai_api_key="API KEY")
+    max_tokens=100, openai_api_key=your-api-key)
 output = llm_model(prompt.format(query="ブロックチェーンが発表されたのはいつですか？"))
 print(output)
 

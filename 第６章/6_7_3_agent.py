@@ -4,7 +4,7 @@ from langchain.python import PythonREPL
 from langchain.agents import AgentType
 from langchain.llms import OpenAI
 llm = OpenAI(
-    openai_api_key="API KEY")
+    openai_api_key=your-api-key)
 
 agent_executor = create_python_agent(
     llm=llm,

@@ -4,12 +4,12 @@ from langchain.chat_models import ChatOpenAI
 
 # ChatModelの作成
 chat_model = ChatOpenAI(
-    max_tokens=300, openai_api_key="API KEY")
+    max_tokens=300, openai_api_key=your-api-key)
 
 # メッセージを生成する
 system_message = SystemMessage(content="文章を英語に翻訳してください")
 human_message = HumanMessage(content="私はPythonを勉強しています")
-print(chat_model([system_message, human_message]))
+print(chat_model.invoke([system_message, human_message]))
 # AIMessage(content='I am studying Python.', additional_kwargs={}, example=False)
 
 # ChatModelを実行する
@@ -42,7 +42,7 @@ print(chat_model.get_num_tokens_from_messages([
 ]))  # 36
 
 openai_llm = OpenAI(
-    max_tokens=100, openai_api_key="API KEY")
+    max_tokens=100, openai_api_key=your-api-key)
 # LLMとChatModelでpredictを実行する
 openai_llm.predict("こんにちは")  # お元気ですか？
 chat_model.predict("こんにちは")  # こんにちは！どのようなご用件でしょうか？

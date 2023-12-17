@@ -1,12 +1,11 @@
-from langchain.llms import OpenAI
+from langchain.chat_models.openai import ChatOpenAI
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import ConversationChain
 
 # ConversationChainのインスタンスを作成
-llm = OpenAI(max_tokens=500,
-             openai_api_key="API KEY")
+chat = ChatOpenAI(max_tokens=500, openai_api_key="your-api-key")
 conversation_memory = ConversationBufferWindowMemory(return_messages=True, k=2)
-chain = ConversationChain(llm=llm, memory=conversation_memory)
+chain = ConversationChain(llm=chat, memory=conversation_memory)
 question_count = 0
 
 # ユーザーの質問が10回になるまでループして、チャットを行う

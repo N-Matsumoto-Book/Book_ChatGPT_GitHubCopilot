@@ -10,6 +10,6 @@ print(docs)
 
 
 loader = DirectoryLoader(BASE_DIR, glob="*.py",
-                         recursive=True, loader_cls=PythonLoader)
+                         recursive=True, loader_cls=PythonLoader(auto_detect_encoding=True))
 docs = loader.load()
 print(docs)

@@ -12,7 +12,7 @@ from langchain.document_loaders import WebBaseLoader
 BASE_DIR = os.path.dirname(__file__)
 # ChromaのCollectionを指定して読み込む
 db = Chroma(persist_directory=os.path.join(BASE_DIR, "chroma_db"), collection_name="wikipedia",
-            embedding_function=OpenAIEmbeddings(openai_api_key="API KEY"))
+            embedding_function=OpenAIEmbeddings(openai_api_key=your-api-key))
 
 
 # Retrieverの作成
@@ -21,11 +21,11 @@ retriever = db.as_retriever()
 # 作成したRetrieverをChainに設定する
 
 qa_chain = RetrievalQA.from_llm(llm=OpenAI(
-    openai_api_key="API KEY"),  retriever=retriever)
+    openai_api_key=your-api-key),  retriever=retriever)
 
 # Chainを実行して、回答を得る。
 query = "What is Langchain?"
-qa_chain.run(query)
+print(qa_chain.run(query))
 
 
 texts = ["apple", "grape", "banana"]

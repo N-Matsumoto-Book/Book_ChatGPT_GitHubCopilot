@@ -4,7 +4,7 @@ from langchain.memory import ConversationBufferWindowMemory
 
 # ChatOpenAIインスタンスを初期化
 chat_llm = ChatOpenAI(
-    max_tokens=500, openai_api_key="API KEY")
+    max_tokens=500, openai_api_key=your-api-key)
 
 # 会話の履歴を保存するMemory
 conversation_memory = ConversationBufferWindowMemory(return_messages=True, k=2)

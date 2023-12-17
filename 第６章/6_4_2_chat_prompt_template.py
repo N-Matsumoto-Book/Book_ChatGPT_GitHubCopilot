@@ -37,7 +37,7 @@ print(chat_prompt.format_prompt(name="ChatAI", question="LangChain").to_messages
 
 # chat_modelを実行する
 chat_model = ChatOpenAI(
-    max_tokens=300, openai_api_key="API KEY")
+    max_tokens=300, openai_api_key=your-api-key)
 print(chat_model(chat_prompt.format_prompt(name="ChatAI",
       question="LangChain").to_messages()))
 print(chat_prompt.input_variables)

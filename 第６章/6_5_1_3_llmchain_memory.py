@@ -4,16 +4,12 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 
 # Modelの作成
-llm_model = OpenAI(
-    openai_api_key="API KEY", temperature=0.9)
+llm_model = OpenAI(openai_api_key="your-api-key", temperature=0.9)
 memory = ConversationBufferWindowMemory(
-    memory_key="chat_history", return_messages=True, k=1)
-prompt = PromptTemplate(
-    template="{chat_history}\nHuman: {question}\n",
-    input_variables=["chat_history", "question"],
+   memory_key="chat_history", return_messages=True, k=1)
+prompt = PromptTemplate.from_template(
+   template="{chat_history}\nHuman: {question}\n",
 )
-
-# Chainの作成
 chain = LLMChain(llm=llm_model, prompt=prompt, memory=memory)
 
 print(chain.run("京都の有名な観光地をおしえて下さい"))

@@ -22,7 +22,7 @@ splitted_documents = text_splitter.transform_documents(documents)
 # collection_nameをdocsにして、Chromaに保存
 Chroma.from_documents(
     splitted_documents, persist_directory=os.path.join(
-        BASE_DIR, "chroma_db"), collection_name="docs", embedding=OpenAIEmbeddings(openai_api_key="API KEY"))
+        BASE_DIR, "chroma_db"), collection_name="docs", embedding=OpenAIEmbeddings(openai_api_key=your-api-key))
 
 # Pythonファイルを読み込む
 BASE_DIR = os.path.dirname(__file__)
@@ -40,7 +40,7 @@ splitted_documents = text_splitter.transform_documents(documents)
 # collection_nameをcodeにして、Chromaに保存
 Chroma.from_documents(
     splitted_documents, persist_directory=os.path.join(
-        BASE_DIR, "chroma_db"), collection_name="code", embedding=OpenAIEmbeddings(openai_api_key="API KEY"))
+        BASE_DIR, "chroma_db"), collection_name="code", embedding=OpenAIEmbeddings(openai_api_key=your-api-key))
 
 # HTMLファイルを読み込む
 BASE_DIR = os.path.dirname(__file__)
@@ -59,4 +59,4 @@ splitted_documents = text_splitter.transform_documents(documents)
 # collection_nameをcodeにして、Chromaに保存
 Chroma.from_documents(
     splitted_documents, persist_directory=os.path.join(
-        BASE_DIR, "chroma_db"), collection_name="code", embedding=OpenAIEmbeddings(openai_api_key="API KEY"))
+        BASE_DIR, "chroma_db"), collection_name="code", embedding=OpenAIEmbeddings(openai_api_key=your-api-key))

@@ -10,7 +10,7 @@ def fetch_weather(location):
 
 
 llm = OpenAI(
-    openai_api_key="API KEY")
+    openai_api_key=your-api-key)
 
 weather_tool = Tool(
     name="天気",
