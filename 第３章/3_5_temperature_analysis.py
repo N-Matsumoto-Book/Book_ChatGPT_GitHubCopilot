@@ -44,7 +44,7 @@ month,average,max,min
 3,12,17,7
 """
 df["month"] = pd.to_datetime(df["date"]).dt.month
-output_df = df.groupby("month").mean()
+output_df = df.groupby("month").mean(numeric_only=True)
 output_df["max"] = df.groupby("month").max()["max"]
 output_df["min"] = df.groupby("month").min()["min"]
 
